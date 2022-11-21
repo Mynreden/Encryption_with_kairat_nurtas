@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/caesarcipher.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="/encoder/caesar_cipher">Caesar Cipher</a>
+  <a href="/encoder/vigenere_cipher">Vigenère Cipher</a>
+  <a href="/encoder/keys">Pubic & Private keys</a>
+  <a href="#about" style="float: right; ">{{user}}</a>
+  <a href="/signout" style="float: right; ">Sign Out</a>
+</div>
+<breifInf>
+    <h2>We will safe your data!</h2>
+    <p style="font-size: 13px;">Project designed, created by Aubakirov Sultan &#10084 &#10084<br></p>
+    <h5>
+        Using various encryption methods, we want to draw attention to the security problems of many resources.
+        The user on the site will learn about encryption methods and will be able to encrypt any text message
+    </h5>
+</breifInf>
+
+
+<p style="margin-top: 520px; font-size: 50px; margin-left: 50px;"> Caesar Cipher</p>
+<div class="forEncoderForm">
+    <p style="font-size: 25px; margin-left: 50px;">Encryption:</p>
+    <form onclick="return false;">
+        <div class="forFormLeft">
+            <p>Enter text for encryption:
+            <input id="inputEn" type="text" class="inputForm"></p>
+            <p>Enter shift number:
+            <input id="shiftEn" type="text" class="inputForm"></p>
+
+            <button id="submitEn" class="buttonStyle">Submit</button>
+        </div>
+
+        <div class="forFormRight">
+            <p>Encrypted Message:</p>
+            <textarea disabled id="outputEn" class="outputArea"></textarea>
+            <button id="copyTextEn" class="buttonStyle">Copy text</button>
+
+        </div>
+        <script src="{% static 'js/CaesarEncoder.js' %}"></script>
+    </form>
+</div>
+
+
+<div class="forDecoderForm">
+    <p style="font-size: 25px; margin-left: 50px;">Decryption:</p>
+    <form onclick="return false;">
+        <div class="forFormLeft">
+            <p>Enter text for decryption:
+            <input id="inputDe" type="text" class="inputForm"></p>
+            <p>Enter shift number:
+            <input id="shiftDe" type="text" class="inputForm"></p>
+
+            <button id="submitDe" class="buttonStyle">Submit</button>
+        </div>
+
+        <div class="forFormRight">
+            <p>Decrypted Message:</p>
+            <textarea disabled id="outputDe" class="outputArea"></textarea>
+            <button id="copyTextDe" class="buttonStyle">Copy text</button>
+        </div>
+        <script src="{% static 'js/CaesarDecoder.js' %}"></script>
+    </form>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/rsakeys.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jsencrypt.min.js'%}"></script>
+</head>
+<body>
+
+
+
+<div class="topnav">
+  <a class="active" href="/encoder/caesar_cipher">Caesar Cipher</a>
+  <a href="/encoder/vigenere_cipher">Vigenère Cipher</a>
+  <a href="/encoder/keys">Pubic & Private keys</a>
+  <a href="#about" style="float: right; ">{{user}}</a>
+  <a href="/signout" style="float: right; ">Sign Out</a>
+</div>
+<a href="/encoder/kairat_nurtas" class="kairat" style="background-image: url({% static 'imgs/floatNurtas.gif'%});
+                           background-position:center center;
+                           background-size:cover;">
+</a>
+<div class="breifInf">
+    <h2>We will safe your data!</h2>
+    <p style="font-size: 13px;">Project designed, created by Aubakirov Sultan &#10084 &#10084<br></p>
+    <h5>
+        Using various encryption methods, we want to draw attention to the security problems of many resources.
+        The user on the site will learn about encryption methods and will be able to encrypt any text message
+    </h5>
+</div>
+
+
+<p style="margin-top: 520px; font-size: 50px; margin-left: 50px;"> RSA Key generator</p>
+
+<div>
+    <button id="generation" class="btn btn-primary btn-lg" style="margin-left: 80px;">Generate keys</button>
+    <br>
+    <div class="forKeyGeneration" style="float: left;">
+        <textarea disabled id="pubkeygen" rows="8" cols="79" class="forTextArea"></textarea>
+    </div>
+    <div class="forKeyGeneration" style="float: right;">
+        <textarea disabled id="privkeygen" rows="8" cols="79" class="forTextArea"></textarea>
+    </div>
+</div>
+
+<div>
+    <p style="margin-top: 260px; font-size: 50px; margin-left: 50px;"> RSA Encrypting</p>
+    <div class="forKeyGeneration" style="float: left;">
+        <label>Text to encrypt: </label>
+        <br>
+        <input id="input" class="form-control form-control-sm">
+        <br>
+        <label>Public Key</label>
+        <br>
+        <input id="pubkey" class="form-control form-control-sm">
+        <button class="btn btn-primary" id="encrypt" style="margin-top: 20px;"> Encrypt </button>
+
+    </div>
+    <div class="forKeyGeneration" style="float: right;">
+        <textarea disabled id="encrypted" rows="8" cols="55" class="forTextArea" style="font-size: 15px;"></textarea>
+    </div>
+
+</div>
+
+<div>
+    <p style="margin-top: 320px; font-size: 50px; margin-left: 50px;"> RSA Decrypting</p>
+    <div class="forKeyGeneration" style="float: left;">
+        <label>Text to decrypt: </label>
+        <br>
+        <input id="entext" class="form-control form-control-sm">
+        <br>
+        <label>Private Key: </label>
+        <br>
+        <input id="privkey" class="form-control form-control-sm">
+        <button class="btn btn-primary" id="decrypt" style="margin-top: 20px;"> Decrypt </button>
+
+    </div>
+    <div class="forKeyGeneration" style="float: right;">
+        <textarea disabled id="decrypted" rows="8" cols="55" class="forTextArea" style="font-size: 15px;"></textarea>
+    </div>
+
+</div>
+
+<script id="rendered-js">
+    document.querySelector("#generation").addEventListener("click", function () {
+        var keySize = 2048;
+        var crypt = new JSEncrypt({default_key_size: keySize});
+        document.getElementById('privkeygen').innerHTML = crypt.getPrivateKey();
+        document.getElementById('pubkeygen').innerHTML = crypt.getPublicKey();
+    });
+
+    document.querySelector("#encrypt").addEventListener("click", function () {
+        const encrypt = new JSEncrypt();
+        encrypt.setPublicKey(document.querySelector("#pubkey").value);
+        const result = encrypt.encrypt(document.querySelector("#input").value);
+        document.querySelector("#encrypted").value = result;
+    });
+
+    document.querySelector("#decrypt").addEventListener("click", function () {
+        const decrypt = new JSEncrypt();
+        decrypt.setPrivateKey(document.querySelector("#privkey").value);
+        const text = decrypt.decrypt(document.querySelector("#entext").value);
+        document.querySelector("#decrypted").value = text;
+    });
+</script>
+
+</body>
+</html>

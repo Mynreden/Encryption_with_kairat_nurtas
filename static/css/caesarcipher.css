@@ -1,0 +1,125 @@
+@font-face
+{
+    font-family: "Lexend Deca";
+    font-weight: normal;
+    font-style: normal;
+    src: url('././fonts/LexendDeca-Medium.ttf');
+    src: url('././fonts/LexendDeca-Medium.ttf') format('truetype');
+}
+
+
+body {
+  background-image: url(../imgs/backgroundForEncoder.svg);
+  background-repeat: no-repeat;
+  background-size: 1290px ;
+  background-position: 300px 0px;
+  font-family: Lexend Deca;
+}
+
+
+.topnav {
+  overflow: hidden;
+}
+
+.topnav a {
+  margin: 10px 20px;
+  border-radius: 100px 100px 100px 100px;
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: #c5fe8a ;
+  color: black;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #c5fe8a ;
+  color: black;
+}
+
+
+breifInf {
+  margin-top: 80px;
+  margin-left: 20px;
+  position: absolute;
+  width: 50%;
+  background-color: #c5fe8a;
+  border-radius: 120px 120px 120px 120px;
+  height: 399px;
+  padding: 70px 100px;
+}
+visitka {
+height = 500px;
+
+}
+.forEncoderForm {
+    position: absolute;
+    margin-top: 20px;
+    border-radius: 100px 100px 100px 100px;
+    background-color: #cffc51;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 1137px;
+    padding: 30px 20px;
+    font-size: 17px;
+}
+.forFormLeft {
+  float: left;
+  margin-left: 20px;
+  width: 45%;
+  border-radius: 120px 120px 120px 120px;
+  padding: 0px 100px;
+}
+
+.forFormRight {
+  float: right;
+  margin-right: 20px;
+  width: 45%;
+  border-radius: 120px 120px 120px 120px;
+  padding: 20px 100px;
+}
+
+.inputForm{
+    margin-left: 20px;
+    margin-right: 20px;
+    border-width: 1px;
+    border-radius: 10px 10px 10px 10px;
+    width: 380px;
+    height: 40px;
+}
+
+.buttonStyle {
+    background-color: #07b5ab;
+    border-radius: 10px 10px 10px 10px;
+    color: white;
+    border-width: 1px;
+}
+
+.outputArea {
+    color: black;
+    border-width: 0px;
+    border-radius: 10px 10px 10px 10px;
+    width: 380px;
+    height: 40px;
+    background-color: #cffc51;
+    resize: none;
+}
+
+.forDecoderForm {
+    position: absolute;
+    margin-top: 350px;
+    border-radius: 100px 100px 100px 100px;
+    background-color: #cffc51;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 1137px;
+    padding: 30px 20px;
+    font-size: 17px;
+}

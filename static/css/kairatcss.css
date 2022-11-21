@@ -1,0 +1,18 @@
+
+.leftColumn {
+    float: left;
+    width: 33%;
+    height: 720px;
+
+}
+.centerColumn {
+    float: left;
+    width: 33%;
+    height: 720px;
+}
+
+.rightColumn {
+    float: right;
+    width: 33%;
+    height: 720px;
+}

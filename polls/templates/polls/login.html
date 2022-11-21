@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/LogIn.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <style>
+        .form-control:focus{border-color: #5cb85c;  box-shadow: none; -webkit-box-shadow: none; background-color: #224957; color: white;}
+        .form-control{border-color: #5cb85c;  box-shadow: none; -webkit-box-shadow: none; background-color: #224957; color: white;}
+
+        .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+           color: white;
+                    opacity: 1; /* Firefox */
+        }
+
+        .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+           color: white;
+        }
+
+        .form-control::-ms-input-placeholder { /* Microsoft Edge */
+           color: white;
+         }
+        .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+           background-color: #20DF7F;
+        }
+    </style>
+</head>
+
+
+<body><UnderBox><Box>
+  <div class="jumbotron text-center">
+  <SignInHeader>Sign in</SignInHeader>
+  <p></p>
+  <p><TextUnderHead>Sign in and save your information!</TextUnderHead></p>
+  </div>
+  <form method="post">
+  {% csrf_token %}
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+      {{ form.username.errors }}
+      {{ form.username }}
+  </div>
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+      {{ form.password.errors }}
+      {{ form.password }}
+  </div>
+
+  <div class="row mb-4">
+    <div class="col d-flex justify-content-center">
+      <!-- Checkbox -->
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+        <label class="form-check-label" for="form2Example31"> Remember me </label>
+      </div>
+    </div>
+
+    <div class="col">
+      <!-- Simple link -->
+      <a href="/registration">Registration</a>
+    </div>
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
+</form>
+</Box></UnderBox>
+<EndOfPage>
+<svg width="100%" height="auto" viewBox="0 0 1261 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 44.4L42.6667 53.28C85.3333 62.16 170.667 79.92 256 75.48C341.333 71.04 426.667 44.4 512 26.64C597.333 8.88 682.667 0 768 0C853.333 0 938.667 8.88 1024 24.42C1109.33 39.96 1194.67 62.16 1237.33 73.26L1280 84.36V111H1237.33C1194.67 111 1109.33 111 1024 111C938.667 111 853.333 111 768 111C682.667 111 597.333 111 512 111C426.667 111 341.333 111 256 111C170.667 111 85.3333 111 42.6667 111H0V44.4Z" fill="#224957" fill-opacity="0.8"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.297688L53 4.46821C107 8.63873 213 16.9798 320 31.0954C427 45.5318 533 66.0636 640 70.2341C747 74.4046 853 61.8931 960 58.0434C1067 53.8728 1173 58.0434 1227 59.9682L1280 61.8931V111.298H1227C1173 111.298 1067 111.298 960 111.298C853 111.298 747 111.298 640 111.298C533 111.298 427 111.298 320 111.298C213 111.298 107 111.298 53 111.298H0V0.297688Z" fill="#20DF7F" fill-opacity="0.8"/>
+</svg>
+</EndOfPage>
+</body>
+</html>
+
+

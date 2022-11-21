@@ -1,0 +1,68 @@
+@font-face
+{
+    font-family: "Lexend Deca";
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('././fonts/LexendDeca-Medium.ttf');
+    src: url('././fonts/LexendDeca-Medium.ttf') format('truetype');
+}
+
+body {
+  /*background-color:white;*/
+  font-family: Lexend Deca;
+}
+
+ImageBox {
+  float: left;
+  width: 50%;
+  height: 500px; /* only for demonstration, should be removed */
+  padding: 20px;
+}
+
+RegBox {
+  float: left;
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 50%;
+  height: 500px; /* only for demonstration, should be removed */
+}
+
+EndOfPage {
+  color: white;
+  width: 100%;
+}
+
+
+
+SignInHeader  {
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 80px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #224957;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1.00px;
+}
+
+TextUnderHead {
+    font-family: 'Lexend Deca';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #224957;
+}
+
